@@ -64,19 +64,14 @@ You can set more than one Slave connection by simply calling the configSlave met
 Call the **select** method and pass the following parameters.
 Returns an associate array representing the fetched table row or false on failure.
 
-
-table
-: the name of the db table we are retreiving the rows from
-params
-: associative array representing the WHERE clause filters
-limit (optional)
-: the amount of rows to return
-start (optional)
-: the row to start on, indexed by zero
-order_by (optional)
-: an array with order by clause
-use_master (optional)
-: use the master db for this read
+| Argument                 | Description                                              |
+|-----------------------|----------------------------------------------------------|
+| table                 | the name of the db table we are retreiving the rows from |
+| params                | associative array representing the WHERE clause filters  |
+| limit (optional)      | the amount of rows to return                             |
+| start (optional)      | the row to start on, indexed by zero                     |
+| order_by (optional)   | an array with order by clause                            |
+| use_master (optional) | use the master db for this read                          |
  
 ```
   $results = $pdo->select('post', array('thread_id' => $thread_id));
@@ -87,10 +82,10 @@ use_master (optional)
 Call the **insert** method to add a row to the specified table.
 Returns new primary key of inserted table or false on failure.
 
-table
-: the name of the db table we are adding row to 
-params
-: associative array representing the columns and their respective values
+| Argument  | Description                                              |
+|--------|----------------------------------------------------------|
+| table  | the name of the db table we are adding row to |
+| params | associative array representing the columns and their respective values  |
 
 ```
   $invite_id = $pdo->insert('invite', array(
@@ -104,13 +99,11 @@ params
 Call the **update** method to update a row to the specified table.
 Returns the amount of rows updated or false on failure.
 
-table
-: the name of the db table we are updating 
-params
-: associative array representing the columns and their respective values to update 
-wheres (Optional)
-: associative array representing the where clause of the query
-
+| Argument  | Description                                              |
+|--------|----------------------------------------------------------|
+| table  | the name of the db table we are updating |
+| params | associative array representing the columns and their respective values to update  |
+| wheres (Optional) | associative array representing the where clause of the query |
 
 ### Complex Queries with bind parameters
 Call **query** to get an array response or **queryFirst** to get just the first row returned.
